@@ -1,0 +1,18 @@
+# baseURL = "http://example.org/"
+baseURL = "https://mcu-database.netlify.com/"
+languageCode = "pt-BR"
+title = "Database Marvel cinematic universe"
+theme = "primary-theme"
+rssLimit = 25
+enableRobotsTXT = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  director = "directors"
+  writer = "writers"
+
+[params]
+  description = "Database of all films Marvel cinematic universe, project for study."
+  themecolor = "#e51922" 
+  favicon = ""

@@ -1,0 +1,33 @@
+{{ define "header" }}
+  {{ partial "header-pages" . }}
+{{ end }}
+
+{{ define "main" }}
+	<main class="container single-page">
+		<section class="row">
+			<header class="col-12">
+				<!-- {{.FirstSection.Title}} -->
+				<h1>{{.FirstSection.Title}}</h1>
+			</header>
+			<div class="col-12 text-big">
+				{{.Content}}
+			</div>
+		</section>
+
+		<section class="row animatedParent" data-sequence="150">
+			{{ $counter := 0 }}
+			{{ range .Pages }}
+				{{ $counter = add $counter 1 }}
+				<div class="col-6 col-md-3 col-lg-2 animated fadeInUpShort" data-id='{{ $counter }}'>
+					<a href="{{ .RelPermalink }}" title="Go to movie info">
+						<div class="slick-responsive__img-wrap slick-responsive__img-wrap--list">
+							<div class="slick-responsive__img">
+								<img src="{{.Params.poster}}" alt="Poster {{.Title}}" class="img-fluid">
+							</div>
+						</div>
+					</a>
+				</div>
+			{{ end }}
+		</section>
+	</main>
+{{ end }}

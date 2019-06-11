@@ -1,0 +1,129 @@
+{{ define "main" }}
+  {{.Content}}
+  
+  <div class="container m-avengers animatedParent animateOnce">
+    <div class="row">
+      <div class="col col-md-5 d-none d-md-block m-avengers__wrap-img">
+        <div class="m-avengers__img animated fadeInLeftShort delay-750">
+            <img src='{{ "images/the-avengers.png" | relURL }}' class="img-fluid" alt="The Avengers photo">
+        </div>
+      </div>
+      
+      <div class="col col-md-7">
+        <h2 class="title-special animated fadeInRightShort delay-500">The Avengers</h2>
+        <p class="text animated fadeInRightShort delay-750">
+          The Avengers began as a group of extraordinary individuals who were assembled to defeat Loki and his Chitauri army in New York City. Since then, the team has expanded its roster and faced a host of new threats, while dealing with their own turmoil.
+        </p>
+        <a href="{{ "categories/the-avengers" | relURL }}" class="btn btn-primary animated fadeInRightShort delay-750" title="See all The Avengers movies">See movies</a>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="container m-movies">
+    <div class="row animatedParent animateOnce">
+      <header class="col m-movies__header ">
+        <h2 class="title-neutral animated fadeInUpShort">Feature movies</h2>
+        <p class="text animated fadeInUpShort">The first three phases are collectively known as "The Infinity Saga".</p>
+      </header>
+    </div>
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <div class="row">
+      <div class="col">
+        <div class="slick-responsive animatedParent animateOnce" data-sequence='150'>
+          {{ $counter := 0 }}
+          {{ range where .Site.RegularPages "Section" "movies" }}
+            {{ $counter = add $counter 1 }}
+            <div class="slick-responsive__item animated fadeInUpShort" data-id='{{ $counter }}'>
+                <a href="{{ .RelPermalink }}" title="Go to movie info">
+                  <div class="slick-responsive__img-wrap">
+                    <div class="slick-responsive__img">
+                      <img src="{{.Params.poster}}" alt="Poster {{.Title}}" class="img-fluid">
+                    </div>
+                  </div>
+                  {{.Title}}
+                </a>
+
+            </div>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="container m-endgame">
+    <div class="row animatedParent animateOnce">
+      <div class="col" style="position: relative;">
+        <div class="m-endgame__art d-none d-lg-block animated fadeInRightShort delay-750">
+          <img src='{{ "images/endgame.jpg" | relURL }}' class="img-fluid" alt="Thanos photo">
+        </div>
+        <div class="m-endgame__grid">
+          <h2 class="title-special m-endgame__grid--title animated fadeInLeftShort">Avengers: Endgame</h2>
+          <div class="m-endgame__grid--trailer animated fadeInLeftShort delay-1000">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/0jNvJU52LvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="title-info m-endgame__grid--overview ">
+            <span class="animated fadeInDownShort delay-1250">Overview</span>
+          </h3>
+          <p class="text m-endgame__grid--text animated fadeInDownShort delay-1250">
+            The grave course of events set in motion by Thanos that wiped out half the universe and fractured the Avengers ranks compels the remaining Avengers to take one final stand in Marvel Studios' grand conclusion to twenty-two films, "Avengers: Endgame."
+          </p>
+          
+          <h3 class="title-info m-endgame__grid--release animated fadeInLeftShort delay-1000">Release date</h3>
+          <p class="text m-endgame__grid--date animated fadeInDownShort delay-1250">April 26, 2019</p>
+          <div class="m-endgame__grid--btn animated fadeIn delay-1000">
+            <a href="#" class="btn btn-primary" title="See more details Avengers: Endgame">More details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{ end }}
+
+{{ define "customscript" }}
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $('.slick-responsive').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 6,
+      slidesToScroll: 6,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        }
+        // {
+        //   breakpoint: 480,
+        //   settings: {
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        //   }
+        // }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  </script>
+{{ end }}

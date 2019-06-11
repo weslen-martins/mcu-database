@@ -1,0 +1,17 @@
+{{ define "header" }}
+  {{ partial "header-pages" . }}
+{{ end }}
+
+{{ define "main" }}
+	<main class="container single-page">
+		<section class="row">
+			<header class="col-12">
+					<!-- {{.FirstSection.Title}} -->
+					<h1>{{.Title}}</h1>
+			</header>
+			<article class="col-12 text-big">
+					{{.Content}}
+			</article>
+		</section>
+	</main>
+{{ end }}
