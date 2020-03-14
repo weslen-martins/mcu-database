@@ -152,5 +152,12 @@
     "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
     "release": "26 April 2019",
     "url": "movies/the-avengers-iv"
+  },
+
+  "23": {
+    "name": "Spider-Man: Far from Home",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "release": "4 July 2019",
+    "url": "movies/spider-man-far-from-home"
   }
 }
