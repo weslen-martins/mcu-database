@@ -1,4 +1,4 @@
-const staticCacheName = 'mcu-2020-04-v01';
+const staticCacheName = 'mcu-2020-08-v01';
 
 const filesToCache = [
   '/',

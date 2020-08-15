@@ -1,5 +1,5 @@
 # baseURL = "http://example.org/"
-baseURL = "https://mcu-database.netlify.com/"
+baseURL = "https://mcu-database.netlify.app/"
 languageCode = "pt-BR"
 title = "Database Marvel cinematic universe"
 theme = "primary-theme"

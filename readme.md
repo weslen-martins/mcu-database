@@ -4,7 +4,7 @@ A database for films in the Marvel film universe, Hugo Static project project an
 
 ## Demo
 
-Know the project access to its stable version in the link [Database Marvel cinematic universe](https://mcu-database.netlify.com/)
+Know the project access to its stable version in the link [Database Marvel cinematic universe](https://mcu-database.netlify.app/)
 
 ### Tech
 
