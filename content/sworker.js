@@ -1,4 +1,4 @@
-const staticCacheName = 'mcu-2020-08-v01';
+const staticCacheName = 'mcu-2020-08-v02';
 
 const filesToCache = [
   '/',
@@ -33,7 +33,7 @@ this.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames
-          .filter(cacheName => (cacheName.startsWith('mcu-2019-')))
+          .filter(cacheName => (cacheName.startsWith('mcu-2020-')))
           .filter(cacheName => (cacheName !== staticCacheName))
           .map(cacheName => caches.delete(cacheName))
       );
